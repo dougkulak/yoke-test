@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
-import Default from './layouts/Default';
+import DefaultLayout from './layouts/Default';
 import Products from './pages/Products';
 
 const appTheme = extendTheme({
@@ -18,16 +18,16 @@ const appTheme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={appTheme}>
-      <Default>
-        <BrowserRouter>
+      <BrowserRouter>
+        <DefaultLayout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </Default>
+        </DefaultLayout>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }

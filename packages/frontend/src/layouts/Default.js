@@ -1,20 +1,7 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  HStack,
-  Link,
-} from '@chakra-ui/react';
+import {Box, Button, Container, Flex, Heading, HStack} from '@chakra-ui/react';
 import {Logo} from '../components/Logo';
-
-const nav = [
-  {label: 'Home', path: '/'},
-  {label: 'About', path: '/about'},
-  {label: 'Products', path: '/products'},
-];
+import Nav from './Nav';
 
 function Default({children}) {
   return (
@@ -30,13 +17,8 @@ function Default({children}) {
           <Logo />
           <Heading>Grocery</Heading>
         </HStack>
-        <HStack as="nav" spacing="5">
-          {nav.map((item) => (
-            <Link key={item.label}>
-              <Button variant="nav"> {item.label} </Button>
-            </Link>
-          ))}
-        </HStack>
+
+        <Nav />
 
         <HStack>
           <Button>Profile</Button>
