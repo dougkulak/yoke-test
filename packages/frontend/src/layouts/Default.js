@@ -1,5 +1,13 @@
 import React from 'react';
-import {Box, Button, Container, Flex, Heading, HStack} from '@chakra-ui/react';
+import {
+  Badge,
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+} from '@chakra-ui/react';
 import {Logo} from '../components/Logo';
 import Nav from './Nav';
 
@@ -17,6 +25,9 @@ function Default({children}) {
         <HStack>
           <Logo />
           <Heading>Grocery</Heading>
+          <Badge variant="solid" colorScheme="green">
+            PRO
+          </Badge>
         </HStack>
 
         <Nav />
