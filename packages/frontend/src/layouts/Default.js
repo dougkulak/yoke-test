@@ -8,6 +8,7 @@ import {
   Flex,
   Heading,
   HStack,
+  Link,
   Text,
 } from '@chakra-ui/react';
 import {Logo} from '../components/Logo';
@@ -26,13 +27,15 @@ function Default({children}) {
         p="5"
         align="center"
         justify="space-between">
-        <HStack>
-          <Logo />
-          <Heading>Grocery</Heading>
-          <Badge variant="solid" colorScheme="green">
-            PRO
-          </Badge>
-        </HStack>
+        <Link as={NavLink} to="/">
+          <HStack>
+            <Logo />
+            <Heading>Grocery</Heading>
+            <Badge variant="solid" colorScheme="green">
+              PRO
+            </Badge>
+          </HStack>
+        </Link>
 
         <Nav />
 
