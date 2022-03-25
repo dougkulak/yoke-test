@@ -10,6 +10,8 @@ import {
 } from '@chakra-ui/react';
 import {Logo} from '../components/Logo';
 import Nav from './Nav';
+import {NavLink} from 'react-router-dom';
+import {SettingsIcon} from '@chakra-ui/icons';
 
 function Default({children}) {
   return (
@@ -33,7 +35,9 @@ function Default({children}) {
         <Nav />
 
         <HStack>
-          <Button>Profile</Button>
+          <Button as={NavLink} to="/profile">
+            <SettingsIcon mr={2} /> Profile
+          </Button>
         </HStack>
       </Flex>
 

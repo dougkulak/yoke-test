@@ -4,8 +4,10 @@ import {Heading, Text} from '@chakra-ui/react';
 function PageHeading({title, subtitle}) {
   return (
     <>
-      <Heading>{title}</Heading>
-      <Text>{subtitle}</Text>
+      <Heading mt={10}>{title}</Heading>
+      <Text mb={10} fontSize="lg">
+        {subtitle}
+      </Text>
     </>
   );
 }
