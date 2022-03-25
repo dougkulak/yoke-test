@@ -9,40 +9,47 @@ import Loader from '../components/Loader';
 
 function Product({data}) {
   return (
-    <Box borderWidth="1px" borderRadius="lg" mb="4" overflow="hidden">
-      <Box p="6">
-        <Box display="flex" alignItems="baseline">
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            New
-          </Badge>
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2">
-            {data.data.quantityInStock} remaining &bull; buy now!
+    <NavLink to={`/products/${data.id}`}>
+      <Box
+        borderWidth="1px"
+        borderRadius="lg"
+        mb="4"
+        overflow="hidden"
+        _hover={{backgroundColor: 'gray.50'}}>
+        <Box p="6">
+          <Box display="flex" alignItems="baseline">
+            <Badge borderRadius="full" px="2" colorScheme="teal">
+              New
+            </Badge>
+            <Box
+              color="gray.500"
+              fontWeight="semibold"
+              letterSpacing="wide"
+              fontSize="xs"
+              textTransform="uppercase"
+              ml="2">
+              {data.data.quantityInStock} remaining &bull; buy now!
+            </Box>
           </Box>
-        </Box>
 
-        <Box
-          mt="1"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          isTruncated>
-          {data.data.name}
-        </Box>
+          <Box
+            mt="1"
+            fontWeight="semibold"
+            as="h4"
+            lineHeight="tight"
+            isTruncated>
+            {data.data.name}
+          </Box>
 
-        <Box>
-          ${data.data.price}{' '}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / each
+          <Box>
+            ${data.data.price}{' '}
+            <Box as="span" color="gray.600" fontSize="sm">
+              / each
+            </Box>
           </Box>
         </Box>
       </Box>
-    </Box>
+    </NavLink>
   );
 }
 
@@ -60,10 +67,6 @@ function Products() {
     {keepPreviousData: true}
   );
 
-  useEffect(() => {
-    console.log('data changed to', data);
-  }, [data]);
-
   return (
     <>
       <PageHeading
@@ -79,8 +82,8 @@ function Products() {
 
       {!isLoading && data?.data?.length > 0 && (
         <Box boxShadow="xs" p="6" mt="6" rounded="md" bg="white">
-          {data.data.map((item) => (
-            <Product data={item} />
+          {data.data.map((item, i) => (
+            <Product data={item} key={i} />
           ))}
         </Box>
       )}

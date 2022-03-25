@@ -1,19 +1,63 @@
 import React from 'react';
-import {Box, Grid, Heading, Link, Text, VStack} from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Center,
+  Grid,
+  Heading,
+  HStack,
+  Link,
+  Stat,
+  StatHelpText,
+  StatLabel,
+  StatNumber,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
+import PageHeading from '../components/PageHeading';
+import {NavLink} from 'react-router-dom';
+import {ArrowForwardIcon} from '@chakra-ui/icons';
 
 function Home() {
   return (
     <>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <VStack spacing={8} pt={10}>
-            <Heading>Welcome, username!</Heading>
-            <Text>Welcome to the YOKE grocery store!</Text>
-            <Link color="teal.500" href="/products" fontSize="2xl">
-              View Products
-            </Link>
-          </VStack>
-        </Grid>
+      <PageHeading
+        title={'Groceries, Simplified.'}
+        subtitle={'Shopping online has never been so easy!'}
+      />
+
+      <HStack textAlign={'center'}>
+        <Stat>
+          <StatNumber>1</StatNumber>
+          <StatLabel>Shop</StatLabel>
+        </Stat>
+        <Stat>
+          <StatNumber>2</StatNumber>
+          <StatLabel>Save</StatLabel>
+        </Stat>
+        <Stat>
+          <StatNumber>3</StatNumber>
+          <StatLabel>Repeat</StatLabel>
+        </Stat>
+      </HStack>
+
+      <Box boxShadow="xs" p="6" mt="6" rounded="md" bg="white">
+        <Text maxW="md">
+          Unfasten your seatbelts because these groceries are being{' '}
+          <em>delivered.</em> And, well, you won't even need a car.
+        </Text>
+
+        <Center>
+          <Button
+            mt={8}
+            as={NavLink}
+            to="/products"
+            leftIcon={<ArrowForwardIcon />}
+            colorScheme="purple"
+            variant="solid">
+            View Our Products
+          </Button>
+        </Center>
       </Box>
     </>
   );

@@ -11,7 +11,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import {Logo} from '../components/Logo';
-import Nav from './Nav';
+import Nav from '../components/Nav';
 import {NavLink} from 'react-router-dom';
 import {SettingsIcon} from '@chakra-ui/icons';
 

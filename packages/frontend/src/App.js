@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 import DefaultLayout from './layouts/Default';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetail />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
