@@ -3,10 +3,12 @@ import {
   Badge,
   Box,
   Button,
+  Center,
   Container,
   Flex,
   Heading,
   HStack,
+  Text,
 } from '@chakra-ui/react';
 import {Logo} from '../components/Logo';
 import Nav from './Nav';
@@ -51,6 +53,14 @@ function Default({children}) {
           {children}
         </Box>
       </Container>
+
+      <Center>
+        <Text mt="4" maxW="md" textAlign="center">
+          &copy; 2022 YOKE & Doug Kulak, maybe.
+          <br />
+          Thanks for being a valued customer!
+        </Text>
+      </Center>
     </>
   );
 }
