@@ -8,6 +8,7 @@ function Default({children}) {
     <>
       <Flex
         as="header"
+        position="fixed"
         backgroundColor="white"
         w="100%"
         p="5"
@@ -25,8 +26,13 @@ function Default({children}) {
         </HStack>
       </Flex>
 
-      <Container as="main" mt="20" maxW="2xl" bg="gray.50" centerContent>
-        <Box padding="4" bg="gray.100" color="black" maxW="md">
+      <Container
+        as="main"
+        pt="20"
+        maxW="container.lg"
+        bg="gray.50"
+        centerContent>
+        <Box padding="4" bg="gray.100" color="black" minW="lg">
           {children}
         </Box>
       </Container>
