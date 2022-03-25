@@ -1,15 +1,15 @@
 import React from 'react';
 import PageHeading from '../components/PageHeading';
 
-function Profile() {
+function Products() {
   return (
     <>
       <PageHeading
-        title={'Profile'}
-        subtitle={'View your account details below.'}
+        title={'Products'}
+        subtitle={'Check out our huge selection!'}
       />
     </>
   );
 }
 
-export default Profile;
+export default Products;
