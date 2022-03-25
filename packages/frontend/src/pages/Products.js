@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import PageHeading from '../components/PageHeading';
 import {Badge, Box, Button, Center, Heading, Text} from '@chakra-ui/react';
 import {NavLink} from 'react-router-dom';

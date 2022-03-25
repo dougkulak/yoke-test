@@ -3,16 +3,11 @@ import {
   Box,
   Button,
   Center,
-  Grid,
-  Heading,
   HStack,
-  Link,
   Stat,
-  StatHelpText,
   StatLabel,
   StatNumber,
   Text,
-  VStack,
 } from '@chakra-ui/react';
 import PageHeading from '../components/PageHeading';
 import {NavLink} from 'react-router-dom';
