@@ -4,7 +4,7 @@ export function fetchProducts() {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios.get(
-        `${process.env.API_BASE_URL}/api/products`
+        `${process.env.REACT_APP_ENDPOINT}/api/products`
       );
 
       if (response.status === 200) {
