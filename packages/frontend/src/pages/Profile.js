@@ -6,16 +6,13 @@ import Loader from '../components/Loader';
 import {
   Avatar,
   Box,
-  Center,
   Divider,
-  Flex,
   Heading,
   HStack,
   Stat,
   StatLabel,
   StatNumber,
   Text,
-  Wrap,
 } from '@chakra-ui/react';
 
 function Profile() {
