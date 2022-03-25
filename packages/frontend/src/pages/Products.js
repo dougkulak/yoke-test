@@ -42,7 +42,7 @@ function Product({data}) {
           </Box>
 
           <Box>
-            ${data.data.price}{' '}
+            ${data.data.price.toFixed(2)}{' '}
             <Box as="span" color="gray.600" fontSize="sm">
               / each
             </Box>

@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 import DefaultLayout from './layouts/Default';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
+import Checkout from './pages/Checkout';
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<ProductDetail />} />
+              <Route path="/checkout/:id" element={<Checkout />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

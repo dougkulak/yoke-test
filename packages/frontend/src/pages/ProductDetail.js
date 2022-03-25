@@ -1,6 +1,6 @@
 import React from 'react';
 import PageHeading from '../components/PageHeading';
-import {Button, Center} from '@chakra-ui/react';
+import {Box, Button, Center, Divider, Heading, Text} from '@chakra-ui/react';
 import {NavLink, useParams} from 'react-router-dom';
 import {useQuery} from 'react-query';
 import {fetchProduct} from '../services/products';
@@ -28,19 +28,35 @@ function ProductDetail() {
     <>
       <PageHeading
         title={data.data.data.name}
-        subtitle={`$${data.data.data.price}`}
+        subtitle={`ID: ${data.data.id}`}
       />
 
-      <Center>
-        <Button
-          mt={8}
-          as={NavLink}
-          to={`/checkout/${data.data.id}`}
-          colorScheme="purple"
-          variant="solid">
-          Buy Now
-        </Button>
-      </Center>
+      <Divider my={4} />
+
+      <Box boxShadow="xs" p="6" mt="6" rounded="md" bg="white">
+        <Heading size={'lg'} textAlign={'center'} color={'green'}>
+          ${data.data.data.price.toFixed(2)}
+        </Heading>
+
+        <Divider my={2} />
+        <Text textAlign={'center'}>
+          {data.data.data.quantityInStock} left in stock
+        </Text>
+        <Divider my={2} />
+
+        <Center>
+          <Button
+            mt={8}
+            as={NavLink}
+            to={`/checkout/${data.data.id}`}
+            colorScheme="purple"
+            variant="solid">
+            Buy Now
+          </Button>
+        </Center>
+      </Box>
+
+      <Divider my={4} />
     </>
   );
 }

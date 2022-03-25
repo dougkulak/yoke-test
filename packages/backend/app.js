@@ -17,6 +17,8 @@ app.use(setHeaders);
 
 app.use('/api/users', require('./routes/users')(db));
 app.use('/api/products', require('./routes/products')(db));
+app.use('/api/orders', require('./routes/orders')(db));
+app.use('/api/checkout', require('./routes/checkout')(db));
 
 // send 404 if no other route matched
 app.use((req, res) => {
